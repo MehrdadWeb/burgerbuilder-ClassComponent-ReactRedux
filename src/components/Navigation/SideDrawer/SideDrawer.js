@@ -1,0 +1,30 @@
+import React from 'react'
+import Logo from "../../Logo/Logo";
+import NavigationItems from "../NavigationItems/NavigationItems";
+import Backdrop from "../../UI/Backdrop/Backdrop";
+
+import classes from "./SideDrawer.css";
+import Aux from '../../../hoc/Auxiliary/Auxiliary';
+
+export default function SideDrawer({closed, open, isAuth}) {
+
+    let attachedClasses = [classes.SideDrawer, classes.Close]
+
+    if(open) {
+        attachedClasses = [classes.SideDrawer, classes.Open]
+    }
+
+    return (
+        <Aux>
+            <Backdrop show={open} clicked={closed} />
+            <div className={attachedClasses.join(" ")} onClick={closed}>
+                <div className={classes.Logo}>
+                    <Logo />
+                </div>
+                <nav>
+                    <NavigationItems isAuth={isAuth} />
+                </nav>
+            </div>
+        </Aux>
+    )
+}
