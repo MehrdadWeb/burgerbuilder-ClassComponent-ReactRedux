@@ -121,7 +121,7 @@ class Auth extends Component {
         return (
             <div className={classes.Auth}>
                 {errorMessage}
-                {!this.state.isSignup ? "Enter Email & Password for <b>Sign-In</b>" : "Enter Email & Password for <b>Sign-Up</b>"}
+                {!this.state.isSignup ? "Enter Email & Password for Sign-In" : "Enter Email & Password for Sign-Up"}
                 <form onSubmit={this.submitHandler}>
                     {form}
                     <Button btnType="Success">Submit</Button>
