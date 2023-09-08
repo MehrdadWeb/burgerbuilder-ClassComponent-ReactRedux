@@ -21,6 +21,7 @@ class Layout extends Component {
             return {showSideDrawer: !prevState.showSideDrawer}
         })
     }
+    // Layout.js => Header, if width > 499px then Toolbar shows,if width < 500px SideDrawer shows
 
     render() {
         return (
