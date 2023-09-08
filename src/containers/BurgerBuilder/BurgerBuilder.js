@@ -11,13 +11,14 @@ import Auxiliary from "../../hoc/Auxiliary/Auxiliary";
 import withErrorHandler from "../../hoc/withErrorHandler/withErrorHandler.js";
 import * as actions from "../../store/actions/index";
 
-
+// Burger.js + BurgerIngredient.js => نمایش همبرگر
 export class BurgerBuilder extends Component {
-    
+    // هستند که Local UI State جزء error و loading و purchasing
+    // نمی بینم redux نیازی به واگذاری آن ها به
     state = {
         purchasing: false,
     }
-
+    // دریافت شده و در مرورگر نمایش داده شود Firebase صدا زده شود و محتویات اولیه از onInitIngredients می خواهیم زمانی که برنامه بارگذاری شد، سریعا
     componentDidMount() {
 
         this.props.onInitIngredients();
@@ -83,7 +84,7 @@ export class BurgerBuilder extends Component {
                     />
                 </Auxiliary>
             )
-
+            {/* OrderSummary.js  => نمایش خلاصه ی سفارش به کاربر */ }
             orderSummary = <OrderSummary 
                                 ingredients={this.props.ings}
                                 purchaseCancelled={this.purchaseCancelHandler}
