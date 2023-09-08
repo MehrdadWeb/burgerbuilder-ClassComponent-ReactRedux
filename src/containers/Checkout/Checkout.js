@@ -21,7 +21,8 @@ class Checkout extends Component {
 
 
         if(this.props.ings) {
-            
+            // کن redirect بود (سفارش با موفقیت تکمیل شده بود) کاربر را به صفحه اصلی true برابر purchased یعنی اگر
+            // در غیر این صورت هنوز در فرآیند خرید هستیم
             const purchasedRedirect = this.props.purchased ? <Redirect to="/" /> : null;
 
             summary = (
